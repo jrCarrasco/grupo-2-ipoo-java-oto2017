@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>856</x>
+      <y>0</y>
+      <w>184</w>
+      <h>304</h>
+    </coordinates>
+    <panel_attributes>Cliente
+--
+- id: int{autonumerico}
+- nombre: string
+- direccion: string
+- telefono:string
+- email:string
+- ciudad:string
+- pais:string
+--
++obtId():int
++obtNombre():string
++obtDireccion():string
++obtTelefono():string
++obtEmail():string
++obtCiudad():string
++obtPais():string
++estId(id:int):void
++estNombre(nombre:string):void
++estDireccion(direccion:string):void
++estTelefono(telefono:string):void
++estEmail(email:string):void
++estCiudad(ciudad:string):void
++estPais(pais:string):void
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1104</x>
+      <y>56</y>
+      <w>264</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>Anunciante
+--
+-personaContacto:string
+--
++obtPersonaContacto():void
++estPersonaContacto(personaContacto:string):void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>584</x>
+      <y>264</y>
+      <w>256</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>Usuario
+--
+- nombreUsuario:string
+- password:string
+- email:string
+--
++obtNombreUsuario():string
++obtPassword():string
++obtEmail():string
++obtCuenta():Cuenta
++estNombreUsuario(nombreUsuario:string):void
++estPassword(password:string):void
++estEmail(email:string):void
++estCuenta(cuenta:Cuenta):void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>768</x>
+      <y>504</y>
+      <w>312</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>Cuenta
+--
+- id:int{autonumerico}
+- ipCuenta:string
+- coordenadaUbicacion:string
+--
++obtId():int
++obtIpCuenta():string
++obtCoordenadaUbicacion():string
++obtArchivosSubidos():ArchivoSubido[*]
++obtAcceso():Acceso
++estId(id:int):void
++estIpCuenta(ipCuenta:string):void
++estCoordenadaUbicacion(coordenadaUbicacion:string):void
++estArchivosSubidos(archivosSubidos:ArchivoSubido):void
++estAcceso(acceso:Acceso):void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>584</x>
+      <y>776</y>
+      <w>304</w>
+      <h>256</h>
+    </coordinates>
+    <panel_attributes>Archivo
+--
+- id:int{autonumerico}
+- nombreArchivo:string
+- tamaño:double
+- tipo:string
+- etiqueta:string
+--
++obtId():int
++obtNombreArchivo():string
++obtTamaño():double
++obtTipo():string
++obtEtiqueta():string
++obtArchivosSubidos():ArchivoSubido[*]
++estId(id:int):void
++estNombreArchivo(nombreArchivo:string):void
++estTamaño(tamaño:double):void
++estTipo(tipo:string):void
++estEtiqueta(etiqueta:string):void
++estArchivosSubidos(archivosSubidos:ArchivoSubido):void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>328</x>
+      <y>512</y>
+      <w>368</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>ArchivoSubido
+--
+- fechaHoraSubido:date
+- url:string
+--
++obtFechaHoraSubido():date
++obtUrl():string
++obtArchivosCompartidos():ArchivoCompartido[*]
++estFechaHoraSubido(fechaHora:date):void
++estUrl(url:string):void
++estArchivosCompartidos(archivosCompartidos:ArchivoCompartido):void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>216</x>
+      <y>904</y>
+      <w>304</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>ArchivoCompartido
+--
+- fecharaHoraCompartido:date
+- emailInvitacion:string
+--
++obtFechaHoraCompartido():date
++obtEmailInvitacion():string
++obtArchivosSubidos():ArchivoSubido[*]
++estFechaHoraCompartido(fechaHora:date):void
++estEmailInvitacion(emailInvitacion:string):void
++estArchivosSubidos(archivosSubidos:ArchivoSubido):void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>912</x>
+      <y>784</y>
+      <w>280</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>Plan
+--
+- id:int{autonumerico}
+- tipoPlan:string
+- capacidadMaxima:double
+- costo:double
+--
++obtId():int
++obtTipoPlan():string
++obtCapacidadMaxima():double
++obtCosto(): double
++obtCuentas():Cuenta[*]
++estId(id:int):void
++estTipoPlan(tipoPlan:string):void
++estCapacidadMaxima(capacidadMaxima:double):void
++estCosto(costo:double):void
++estCuentas(cuentas:Cuenta):void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1072</x>
+      <y>208</y>
+      <w>344</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>Aviso
+--
+- id:int{autonumerico}
+- numeroMaximoReprod:int
+- pesoMaximo:double
+- tipoReproduccion:string
+- costo:double
+--
++obtId():int
++obtNumeroMaximoReprod():int
++obtPesoMaximo():double
++obtTipoReproduccion():string
++obtCosto():double
++obtAnunciante():Anunciante
++obtTipoAviso():TipoAviso
++estId(id:int):void
++estNumeroMaximoReprod(numeroMaximoReprod:double):void
++estPesoMaximo(pesoMaximo:double):void
++estTipoReproduccion(tipoReproduccion:string):void
++estCosto(costo:double):void
++estAnunciante(anunciante:Anunciante):void
++estTipoAviso(tipoAviso:TipoAviso):void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1440</x>
+      <y>376</y>
+      <w>280</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>TipoAviso
+--
+- id:int
+- pesoMaximo:double
+- generoVoz:string
+- localidadIdioma:string
+--
++obtId():int
++obtPesoMaximo():double
++obtGeneroVoz():string
++obtLocalidadIdioma():string
++estId(id:int):void
++estPesoMaximo(pesoMaximo:double):void
++estGeneroVoz(generoVoz:string):void
++estLocalidadIdioma(localidadIdioma:string):void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1264</x>
+      <y>856</y>
+      <w>320</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>EstadoCuenta
+--
+- fechaHoraGeneracion:date
+- estado:string
+--
++obtFechaHoraGeneracion():date
++obtEstado():string
++estFechaHoraGeneracion(fechaHora:date):void
++estEstado(estado:string):void
++generarEstadoCuentaCliente(id:int):void
++calcularCantAviso(a:Aviso, numeroMaximoReprod:int):void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1184</x>
+      <y>616</y>
+      <w>280</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>Venta
+--
+- fechaHoraVenta:date
+--
++obtfechaHoraVenta():date
++obtCuenta():Cuenta
++obtAvisos():Aviso[*]
++obtEstadoCuenta():EstadoCuenta[*]
++estFechaHoraVenta(fechaHora:date):void
++estCuenta(cuenta:Cuenta):void
++estAvisos(avisos:Aviso):void
++estEstadoCuenta(estadoCuenta:EstadoCuenta):void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>392</x>
+      <y>40</y>
+      <w>216</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>Acceso
+--
+- fechaHoraInicio:date
+- fechaHoraFin:date
+- ip:string
+--
++obtFechaHoraInicio():date
++obtFechaHoraFin():date
++obtIp():string
++obtCliente():Cliente
++estFechaHoraInicio(fechaHora:date):void
++estFechaHoraFin(fechaHora:date):void
++estIp(ip:string):void
++estCliente(cliente:Cliente):void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>696</y>
+      <w>312</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>Mapeo
+--
+-id:int{autonumerico}
+-descripcion:string
+--
++obtId():int
++obtDescripcion():string
++obtArchivosSubidos():ArchivoSubido[*]
++estId(id:int):void
++estDescripcion(descripcion:string):void
++estArchivosSubidos(archivosSubidos:ArchivoSubido):void
++mapearArchivo(a:Archivo, tamaño:double, tipo:string)
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>40</x>
+      <y>576</y>
+      <w>304</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=*
+m2=1</panel_attributes>
+    <additional_attributes>360.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>656</x>
+      <y>1072</y>
+      <w>168</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>TipoArchivo
+--
+
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>720</x>
+      <y>1024</y>
+      <w>24</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>600</x>
+      <y>32</y>
+      <w>272</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>320.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1032</x>
+      <y>104</y>
+      <w>88</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;140.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>648</x>
+      <y>168</y>
+      <w>224</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>260.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>528</x>
+      <y>208</y>
+      <w>256</w>
+      <h>336</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;280.0;300.0;400.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>888</x>
+      <y>704</y>
+      <w>152</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>408</x>
+      <y>648</y>
+      <w>344</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>410.0;160.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>688</x>
+      <y>568</y>
+      <w>96</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>100.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1160</x>
+      <y>136</y>
+      <w>64</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>60.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>368</x>
+      <y>648</y>
+      <w>56</w>
+      <h>272</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;320.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>696</x>
+      <y>432</y>
+      <w>256</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=*
+m2=1</panel_attributes>
+    <additional_attributes>300.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1152</x>
+      <y>480</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;190.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1072</x>
+      <y>552</y>
+      <w>128</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1288</x>
+      <y>768</y>
+      <w>88</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1408</x>
+      <y>248</y>
+      <w>120</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;160.0</additional_attributes>
+  </element>
+</diagram>
